@@ -54,8 +54,8 @@ const LeftNav = () => {
                     );
                 })}
                 <hr className="my-5 border-black/[0.2]" />
-                <div className="text-black/[0.5] text-[13px]">
-                    Clone by : @Poonam Sengar
+                <div className="text-black/[0.5] text-[13px] text-right">
+                    Clone by : @Poonam Sengar, @Aman Makwa
                 </div>
             </div>
         </div>

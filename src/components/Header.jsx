@@ -11,7 +11,6 @@ import { categories } from "../utils/constants";
 import { Context } from "../context/contextApi";
 import Loader from "../shared/loader";
 import UserInfo from "./UserInfo";
-import PoonamSengar from "../images/PoonamSengar.png"
 
 const Header = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -98,7 +97,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-                    <img  src={PoonamSengar} />
+                    <img  src="https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/passport/1-change1.jpg" />
                             
                 </div>
             </div>
