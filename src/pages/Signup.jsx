@@ -17,8 +17,13 @@ const Signup = () => {
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("user", JSON.stringify(input));
-    navigate("/");
+    if(input.email == "" && input.password == ""){
+      alert("please filled the require data");
+    }else{
+      localStorage.setItem("user", JSON.stringify(input));
+      navigate("/");
+    }
+   
   };
   return (
     <div className="App">
@@ -32,6 +37,7 @@ const Signup = () => {
             placeholder="enter email"
             name="email"
             value={input.email}
+            autoComplete="off"
             onChange={(e) =>
               setInput({ ...input, [e.target.name]: e.target.value })
             }

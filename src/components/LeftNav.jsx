@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import LeftNavMenuItem from "./LeftNavMenuItem";
 import { categories } from "../utils/constants";
@@ -23,6 +23,11 @@ const LeftNav = () => {
                 break;
         }
     };
+    const userEmail = JSON.parse(localStorage.getItem("user"));
+    const handleLogout = () =>{
+        localStorage.removeItem("loggedin");
+        navigate("/Login")
+    }
 
     return (
         <div
@@ -54,6 +59,7 @@ const LeftNav = () => {
                         </React.Fragment>
                     );
                 })}
+                <button style={{border: "2px solid black"}} onClick={handleLogout}>User Signout</button>
                 <hr className="my-5 border-black/[0.2]" />
                 <div className="text-black/[0.5] text-[13px] text-right">
                     Clone by : @Poonam Sengar, @Aman Makwa
