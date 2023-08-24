@@ -50,6 +50,7 @@ const LeftNav = () => {
                             {item.divider && (
                                 <hr className="my-5 border-black/[0.2]" />
                             )}
+                
                         </React.Fragment>
                     );
                 })}

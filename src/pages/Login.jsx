@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./style.css";
+import {
+  FaEye,
+  FaLock,FaUndo, FaUser
+} from "react-icons/fa";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -23,33 +28,46 @@ const Login = () => {
     }
   };
   return (
-    <form onSubmit={handelLogin}>
-      <label>user email</label> <br />
-      <input
-        type="email"
-        placeholder="enter email"
-        name="email"
-        value={input.email}
-        onChange={(e) =>
-          setInput({ ...input, [e.target.name]: e.target.value })
-        }
-      />
+    <div className="App">
+    <form onSubmit={handelLogin} className="formRegister">
+      <h1>LogIn</h1>
+      <div className="insideDiv">
+        <FaUser className="lab"/>
+        <input
+          className="inputBox"
+          type="email"
+          placeholder="enter email"
+          name="email"
+          value={input.email}
+          onChange={(e) =>
+            setInput({ ...input, [e.target.name]: e.target.value })
+          }
+        />
+        <FaUndo className="IconRight"/>
+        <br />
+        <FaLock className="lab"/>
+        <input
+          className="inputBox"
+          type="password"
+          placeholder="enter password"
+          name="password"
+          value={input.password}
+          onChange={(e) =>
+            setInput({ ...input, [e.target.name]: e.target.value })
+          }
+        />
+        <FaEye className="IconRight"/>
+      </div>
+
       <br />
-      <label>user password</label>
-      <br />
-      <input
-        type="password"
-        placeholder="enter password"
-        name="password"
-        value={input.password}
-        onChange={(e) =>
-          setInput({ ...input, [e.target.name]: e.target.value })
-        }
-      />
-      <br />
-      <button type="submit">Login</button>
-      <Link to ="/Signup"> <u>Register</u></Link>
+
+      <button className="btn" type="submit">Login</button>
+      <Link to="/Signup"  className="Lin">
+        {"  "}
+        <u  className="btn">Register</u>
+      </Link>
     </form>
+    </div>
   );
 };
 

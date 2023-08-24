@@ -21,12 +21,8 @@ const App = () => {
                         <Route path="/Signup" element={<Signup/>} />
                         <Route path="/" element={<Protect/>}>
                         <Route path="/" exact element={<Feed />} />
-                        <Route
-                            path="/searchResult/:searchQuery"
-                            element={<SearchResult />}
-                        />
-                        <Route path="/video/:id" element={<VideoDetails
-                         />} />
+                        <Route path="/searchResult/:searchQuery" element={<SearchResult />}/>
+                        <Route path="/video/:id" element={<VideoDetails/>} />
                          </Route>
                     </Routes>
                 </div>

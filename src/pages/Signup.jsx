@@ -1,23 +1,33 @@
-import React, { useState } from 'react'
-import { useNavigate} from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./style.css";
+import {
+  FaEye,
+  FaLock, FaUndo, FaUser
+} from "react-icons/fa";
+
 
 const Signup = () => {
-    const navigate = useNavigate();
-      const [input, setInput] = useState({
-        email: "",
-        password: "",
-      });
-     
-      const handelSubmit = (e) => {
-        e.preventDefault();
-        localStorage.setItem("user", JSON.stringify(input));
-         navigate("/");
-      };
-      return (
-        <form onSubmit={handelSubmit}>
-          <label>user email</label> <br />
+  const navigate = useNavigate();
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("user", JSON.stringify(input));
+    navigate("/");
+  };
+  return (
+    <div className="App">
+      <form onSubmit={handelSubmit} className="formRegister">
+        <h1>Register</h1>
+        <div className="insideDiv">
+          <FaUser className="lab" />
           <input
+            className="inputBox"
             type="email"
             placeholder="enter email"
             name="email"
@@ -26,10 +36,11 @@ const Signup = () => {
               setInput({ ...input, [e.target.name]: e.target.value })
             }
           />
+          <FaUndo className="IconRight" />
           <br />
-          <label>user password</label>
-          <br />
+          <FaLock className="lab" />
           <input
+            className="inputBox"
             type="password"
             placeholder="enter password"
             name="password"
@@ -38,11 +49,19 @@ const Signup = () => {
               setInput({ ...input, [e.target.name]: e.target.value })
             }
           />
-          <br />
-          <button type='submit'>SignUp</button>
-          <Link to ="/Login"> <u>Login</u></Link>
-        </form>
-      );
-    }
+          <FaEye className="IconRight" />
+        </div>
+        <br />
+        <button className="btn" type="submit">
+          Register
+        </button>
+        <Link to="/Signup" className="Lin">
+          {"  "}
+          <u className="btn">Login</u>
+        </Link>
+      </form>
+    </div>
+  );
+};
 
 export default Signup;
