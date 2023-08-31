@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import {
   FaEye,
-  FaLock,FaUndo, FaUser
+  FaLock,FaRegEye,FaRegUser,FaUndo, FaUser
 } from "react-icons/fa";
 
 const Login = () => {
+  const [visble, setvisble] = useState(false);
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -43,12 +44,11 @@ const Login = () => {
             setInput({ ...input, [e.target.name]: e.target.value })
           }
         />
-        <FaUndo className="IconRight"/>
-        <br />
+        <br/>
         <FaLock className="lab"/>
         <input
           className="inputBox"
-          type="password"
+          type={visble ? "text" : "password"}
           placeholder="enter password"
           name="password"
           value={input.password}
@@ -56,6 +56,9 @@ const Login = () => {
             setInput({ ...input, [e.target.name]: e.target.value })
           }
         />
+          <span className="iconn" onClick={()=>setvisble(!visble)}>
+           {visble ? <FaRegEye />  : <FaLock/> } 
+          </span>
         <FaEye className="IconRight"/>
       </div>
 
