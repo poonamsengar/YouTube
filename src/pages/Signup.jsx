@@ -23,7 +23,7 @@ const Signup = () => {
       alert("please filled the require data");
     }else{
       localStorage.setItem("user", JSON.stringify(input));
-      navigate("/");
+      navigate("/Login");
     }
    
   };
