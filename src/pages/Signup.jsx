@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import {
   FaEye,
-  FaLock, FaUndo, FaUser
+  FaLock, FaRegEye, FaUndo, FaUser
 } from "react-icons/fa";
 
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [visble, setvisble] = useState(false);
   const [input, setInput] = useState({
+    name:"",
     email: "",
     password: "",
   });
@@ -30,6 +32,19 @@ const Signup = () => {
       <form onSubmit={handelSubmit} className="formRegister">
         <h1>Register</h1>
         <div className="insideDiv">
+             <FaUser className="lab" />
+          <input
+            className="inputBox"
+            type="name"
+            placeholder="enter name"
+            name="name"
+            value={input.name}
+            autoComplete="off"
+            onChange={(e) =>
+              setInput({ ...input, [e.target.name]: e.target.value })
+            }
+          />
+          <br />
           <FaUser className="lab" />
           <input
             className="inputBox"
@@ -42,12 +57,11 @@ const Signup = () => {
               setInput({ ...input, [e.target.name]: e.target.value })
             }
           />
-          <FaUndo className="IconRight" />
           <br />
           <FaLock className="lab" />
           <input
             className="inputBox"
-            type="password"
+            type={visble ? "text" : "password"}
             placeholder="enter password"
             name="password"
             value={input.password}
@@ -55,7 +69,9 @@ const Signup = () => {
               setInput({ ...input, [e.target.name]: e.target.value })
             }
           />
-          <FaEye className="IconRight" />
+           <span className="iconn" onClick={()=>setvisble(!visble)}>
+           {visble ? <FaRegEye />  : <FaLock/> } 
+          </span>
         </div>
         <br />
         <button className="btn" type="submit">

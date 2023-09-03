@@ -27,6 +27,7 @@ const Login = () => {
     } else {
       alert("Email and Password incorrect");
     }
+    console.log(loggedUser);
   };
   return (
     <div className="App">
@@ -56,7 +57,7 @@ const Login = () => {
             setInput({ ...input, [e.target.name]: e.target.value })
           }
         />
-          <span className="iconn" onClick={()=>setvisble(!visble)}>
+          <span className="icon" onClick={()=>setvisble(!visble)}>
            {visble ? <FaRegEye />  : <FaLock/> } 
           </span>
         <FaEye className="IconRight"/>
