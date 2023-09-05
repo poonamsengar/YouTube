@@ -35,7 +35,7 @@ const Signup = () => {
       <FaUser className="absolute sm:left-10 sm:top-[rem]  text-4xl md:top-[8rem] md:left-14 md:bottom-72 lg:top-[2] xl:top-[9rem]  xl:text-[50px]  2xl:text-[25px] 2xl:ml-[3rem] " /> 
         <input
           className="relative p-4 w-[20rem]  md:w-96 md:right-5  lg:w-[35rem] xl:w-[770px]  xl:h-[85px] xl:ml-[3rem] 2xl:h-[3rem] 2xl:w-[35rem]" 
-          type="email"
+          type="text"
           placeholder="enter name"
           name="name" 
           value={input.name}
