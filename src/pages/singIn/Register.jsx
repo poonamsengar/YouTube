@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import { FaRegUser, FaRegEye, FaUserNinja, FaRedRiver } from "react-icons/fa";
+import swal from 'sweetalert';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ const Register = () => {
     else if (regExp.test(input.password) && regExp.test(input.ConfimPassword)) {
       setmessage("password is  valid");
       navigate("/SignIn");
+      swal("Good job!", "Congratulation you registered", "success");
+
       localStorage.setItem("user",JSON.stringify(input));
     }
   };

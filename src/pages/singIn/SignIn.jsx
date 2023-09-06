@@ -7,6 +7,8 @@ import {
   FaRegEye,
   FaRedRiver,
 } from "react-icons/fa";
+import swal from 'sweetalert';
+
 
 const SignIn = () => {
   const [visible, setvisivle] = useState(false);
@@ -27,9 +29,10 @@ const SignIn = () => {
     ) {
       localStorage.setItem("loggedin", true);
       navigate("/");
+      swal("Good job!", "Congratulation you Login", "success");
     } 
      else {
-      
+      swal("please insert info !", "", "warning");
     }
   };
 
