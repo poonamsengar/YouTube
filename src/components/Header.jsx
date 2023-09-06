@@ -12,10 +12,17 @@ import { Context } from "../context/contextApi";
 import Loader from "../shared/loader";
 import UserInfo from "./UserInfo";
 
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+
 const Header = () => {
     const [searchQuery, setSearchQuery] = useState("");
-
+    const [userinfo, DataUserInfo] = useState("");
     const { loading, mobileMenu, setMobileMenu } = useContext(Context);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
 
     const navigate = useNavigate();
 
@@ -34,9 +41,26 @@ const Header = () => {
 
     const { pathname } = useLocation();
     const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
+    
+    // side var
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
+    // Logout here
+    
+    const handleLogout = () =>{
+        localStorage.removeItem("loggedin");
+        navigate("/SignIn")
+    }
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    const loggedin = JSON.parse(localStorage.getItem("loggedin"))
+    console.log(userInfo)
     return (
-        <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black"> 
+        <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
             {loading && <Loader />}
 
             <div className="flex h-5 items-center">
@@ -54,13 +78,13 @@ const Header = () => {
                 )}
                 <Link to="/" className="flex h-5 items-center">
                     <img
-                        className="hidden md:block h-14" 
+                        className="hidden md:block h-14"
                         src={ytLogo}
                         alt="Youtube"
                     />
                     <img
                         className="h-full md:hidden"
-                        src={ytLogoMobile} 
+                        src={ytLogoMobile}
                         alt="Youtube"
                     />
                 </Link>
@@ -97,8 +121,25 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-                    <img  src="https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/passport/1-change1.jpg" />
-                            
+                    <img id="basic-button"
+                        aria-controls={open ? 'basic-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick} src="https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/passport/1-change1.jpg" />
+
+                    <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'basic-button',
+                        }}
+                    >
+                        <MenuItem onClick={handleClose}>{loggedin ? userInfo.name : "😔 not login !"}</MenuItem>
+                        <MenuItem onClick={handleLogout}>{loggedin ? "Logout" : "Login "}</MenuItem>
+                    </Menu>
+
                 </div>
             </div>
         </div>

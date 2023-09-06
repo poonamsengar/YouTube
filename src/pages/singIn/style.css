@@ -1,0 +1,113 @@
+/* @import "../../mixins.scss"; */
+
+.form-Register {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+    transform: translateY(0);
+    width: 32rem;
+    height: 34rem;
+    margin: auto;
+    transition: all ease 0.5s;
+    /* top: 3rem; */
+    color: black; 
+}
+
+h1{
+    width: 7rem;
+    margin-left: 16rem;
+    line-height: 1rem;
+}
+label{
+    margin-left: 2rem;
+}
+.insideForm{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;        padding: 3rem;
+    width: 30rem;
+    height: 33rem;
+    margin: .4rem auto;
+}
+.insideInput{
+    display: flex;
+    justify-content: space-around;
+    padding: 0.9em;
+    width: 20rem;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    outline: none;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.256);
+   
+}
+.btn-Submit{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(235, 237, 238, 0.097) 0px 2px 6px 2px;    background-color: rgba(43, 46, 226, 0);
+    border: none;
+    padding: 0.5rem;
+    width: 12rem;
+    margin-left: 2rem;
+    font-size: 1rem;
+    margin-bottom: 5rem;
+    margin-left: 4rem;
+    color: black;
+    border: 1px solid rgba(128, 128, 128, 0.256);
+
+}
+.btn-Submit:hover{
+    box-shadow: rgba(116, 120, 123, 0.3) 0px 1px 2px 0px, rgba(210, 216, 217, 0.318) 0px 2px 6px 2px;    background-color: rgba(43, 46, 226, 0);
+    cursor: pointer;
+}
+.reg{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(235, 237, 238, 0.097) 0px 2px 6px 2px;    background-color: rgba(43, 46, 226, 0);
+    padding: 0.5rem;
+    margin-left: 1rem;
+    
+    color: black;
+    text-decoration: none;
+    border: 1px solid rgba(128, 128, 128, 0.256);
+
+}
+u{
+    text-decoration: none;
+    font-size: .7rem;
+}
+
+.iconn{
+    position: absolute;
+    margin-left: 20rem;
+    margin-top: -2rem;
+    color: black;
+}
+
+.form-Registerr{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+    transform: translateY(0);
+    width: 32rem;
+    height: 40rem;
+    margin: auto;
+    transition: all ease 0.5s;
+    /* top: 3rem; */
+    color:black;
+}
+.insideFormm{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 15px, rgba(153, 152, 152, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;        padding: 3rem;
+    width: 30rem;
+    height: 39rem;
+    margin: .4rem auto;
+}
+@keyframes mobileMenu {
+    0% {
+        transform: translateY(-130%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width:639px) and ( min-width:360px) {
+    .footer{
+        width:35rem;
+        margin-top: 2rem;
+        height: 22rem;
+    }
+}

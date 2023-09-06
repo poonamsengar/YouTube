@@ -23,14 +23,7 @@ const LeftNav = () => {
                 break;
         }
     };
-    const userInfo = JSON.parse(localStorage.getItem("user"));
-    const loggedin = JSON.parse(localStorage.getItem("loggedin"))
-    console.log(userInfo)
-
-    const handleLogout = () =>{
-        localStorage.setItem("loggedin",false);
-        navigate("/Login")
-    }
+  
 
     return (
         <div
@@ -62,9 +55,7 @@ const LeftNav = () => {
                         </React.Fragment>
                     );
                 })}
-                <p style={{color:"red", marginLeft:"2rem",fontSize:"1rem",lineHeight:"2rem"}}>{loggedin ? `welcome ${userInfo.name}` : ""}</p>
-        
-                <button style={{border: "2px solid black"}} onClick={handleLogout}>User Signout</button>
+                <p style={{color:"red", marginLeft:"2rem",fontSize:"1rem",lineHeight:"2rem"}}></p>
                 <hr className="my-5 border-black/[0.2]" />
                 <div className="text-black/[0.5] text-[13px] text-right">
                     Clone by : @Poonam Sengar, @Aman Makwa
