@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 import { FaRegUser, FaRegEye, FaUserNinja, FaRedRiver } from "react-icons/fa";
 import swal from 'sweetalert';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
   const navigate = useNavigate();
@@ -24,7 +27,16 @@ const Register = () => {
     const regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
 
     if (input.password === "" ) {
-      setmessage("please enter password");
+      toast.error('please fill the details!', {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
     else if (!regExp.test(input.password) || !regExp.test(input.ConfimPassword)) {
       setmessage("password not is valid");
@@ -39,6 +51,7 @@ const Register = () => {
   };
 
   return (
+    <>
     <form onSubmit={FormhandelSubmit} className="form-Registerr">
       <div className="insideFormm">
         <h1>SignUp</h1>
@@ -117,6 +130,8 @@ const Register = () => {
         </button>
       </div>
     </form>
+    <ToastContainer/>
+</>
   );
 };
 

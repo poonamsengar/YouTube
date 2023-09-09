@@ -8,6 +8,8 @@ import {
   FaRedRiver,
 } from "react-icons/fa";
 import swal from 'sweetalert';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignIn = () => {
@@ -32,11 +34,21 @@ const SignIn = () => {
       swal("Good job!", "Congratulation you Login", "success");
     } 
      else {
-      swal("please insert info !", "", "warning");
+      toast.error('please fill the details!', {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
   };
 
   return (
+    <>
     <form onSubmit={handelLogin} className="form-Register">
       <div className="insideForm">
         <h1>SignIn</h1>
@@ -80,6 +92,8 @@ const SignIn = () => {
         </Link>
       </div>
     </form>
+    <ToastContainer/>
+  </>
   );
 };
 
