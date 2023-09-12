@@ -5,7 +5,7 @@
     position: relative;
     transform: translateY(0);
     width: 32rem;
-    height: 34rem;
+    height: 40rem;
     margin: auto;
     transition: all ease 0.5s;
     /* top: 3rem; */
@@ -13,9 +13,12 @@
 }
 
 h1{
-    width: 7rem;
+    width: 5rem;
     margin-left: 16rem;
     line-height: 1rem;
+    font-weight: 600;
+    font-size: 20px;
+    height: 30px;
 }
 label{
     margin-left: 2rem;
@@ -23,7 +26,7 @@ label{
 .insideForm{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;        padding: 3rem;
     width: 30rem;
-    height: 33rem;
+    height: 39rem;
     margin: .4rem auto;
 }
 .insideInput{
@@ -94,6 +97,10 @@ u{
     width: 30rem;
     height: 39rem;
     margin: .4rem auto;
+}
+.btn-logReg{
+    font-size: .9rem;
+    margin-top: -2rem;
 }
 @keyframes mobileMenu {
     0% {

@@ -12,7 +12,6 @@ import { Context } from "../context/contextApi";
 import Loader from "../shared/loader";
 import UserInfo from "./UserInfo";
 
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -101,7 +100,6 @@ const Header = () => {
                         onKeyUp={searchQueryHandler}
                         placeholder="Search"
                         value={searchQuery}
-
                     />
                 </div>
                 <button
@@ -111,6 +109,7 @@ const Header = () => {
                     <IoIosSearch className="text-black text-xl" />
                 </button>
             </div>
+            
             <div className="flex items-center">
                 <div className="hidden md:flex">
                     <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
