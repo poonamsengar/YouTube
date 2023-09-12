@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { FaRegUser, FaRegEye, FaUserNinja, FaRedRiver } from "react-icons/fa";
 import swal from 'sweetalert';
@@ -12,7 +12,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [visible, setvisivle] = useState(false)
   const [Confimvisible, setConfimVisivle] = useState(false)
- 
+  
   const [input, setInput] = useState({
     name: "",
     email: "",
@@ -21,7 +21,7 @@ const Register = () => {
   });
   const FormhandelSubmit = (e) => {
     e.preventDefault()
-    const reg = /^[0-9A-Za-z]{5,16}$/
+    const reg = /^[0-9A-Za-z]{6,16}$/
 
     if (!input.name) {
       toast.error('Fill the name ', {
@@ -36,8 +36,7 @@ const Register = () => {
       });
     }
     else if (!reg.test(input.name)) {
-     
-      toast.warn ('please insert [A-Z] [a-z] username ', {
+      toast.warn ('please insert [A-Z] [a-z]  username length should be greater than 6 alphabets not allow speacial charecter space.. ', {
         position: "bottom-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -307,9 +306,9 @@ const Register = () => {
           <span className="iconn">
             <FaRegUser />
           </span>
-          {/* <p style={{ marginLeft: "2rem", color: "red" }}>{message}</p> */}
-          <br />
-          <label>user email</label> <br />
+            <li style={{fontSize:".7rem", marginLeft:"2rem", marginTop:".5rem", color:"gray"}}> speacial characters and Symbol are not allow</li>
+            <li style={{fontSize:".7rem", marginLeft:"2rem", color:"gray",marginBottom:".9rem"}}> space are not allow</li>
+          <label>user email</label> <br/>
           <input
             className="insideInput"
             autoComplete="off"
@@ -341,7 +340,6 @@ const Register = () => {
           <span className="iconn" onClick={() => setvisivle(!visible)}>
             {visible ? <FaRegEye /> : <FaRedRiver />}
           </span>
-          {/* <p style={{ marginLeft: "2rem", color: "green" }}>{message}</p> */}
           <br />
           <label>Confirm password</label>
           <input
@@ -360,9 +358,13 @@ const Register = () => {
           </span>
           {/* <p style={{ marginLeft: "2rem", color: "green" }}>{Confimmessage}</p> */}
           <br />
-          <button type="submit" className="btn-Submit">Register</button>vv
-          <a href="/SignIn" className="btn-logReg">if you are not logIn than click here</a>
-        </div>
+          <button type="submit" className="btn-Submit">
+          Register
+        </button>
+        <Link to="/SignIn" className="reg">
+          <u >Login</u>
+        </Link>
+      </div>
       </form>
       <ToastContainer />
 

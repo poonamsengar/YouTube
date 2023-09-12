@@ -50,7 +50,7 @@ const SignIn = () => {
   return (
     <>
     <form onSubmit={handelLogin} className="form-Register">
-      <div className="insideForm">
+      <div>
         <h1>SignIn</h1>
         <label>user email</label> <br />
         <input

@@ -1,41 +1,31 @@
 /* @import "../../mixins.scss"; */
 
 .form-Register {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     position: relative;
     transform: translateY(0);
     width: 32rem;
-    height: 40rem;
     margin: auto;
     transition: all ease 0.5s;
-    /* top: 3rem; */
     color: black; 
 }
-
 h1{
     width: 5rem;
     margin-left: 16rem;
     line-height: 1rem;
     font-weight: 600;
-    font-size: 20px;
-    height: 30px;
+    font-size: 25px;
+    height: 40px;
 }
 label{
     margin-left: 2rem;
 }
-.insideForm{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;        padding: 3rem;
-    width: 30rem;
-    height: 39rem;
-    margin: .4rem auto;
-}
 .insideInput{
     display: flex;
     justify-content: space-around;
-    padding: 0.9em;
+    padding: 0.5em;
     width: 20rem;
     margin-left: 2rem;
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     outline: none;
     font-weight: 600;
     position: relative;
@@ -43,7 +33,6 @@ label{
    
 }
 .btn-Submit{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(235, 237, 238, 0.097) 0px 2px 6px 2px;    background-color: rgba(43, 46, 226, 0);
     border: none;
     padding: 0.5rem;
     width: 12rem;
@@ -60,10 +49,8 @@ label{
     cursor: pointer;
 }
 .reg{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(235, 237, 238, 0.097) 0px 2px 6px 2px;    background-color: rgba(43, 46, 226, 0);
     padding: 0.5rem;
     margin-left: 1rem;
-    
     color: black;
     text-decoration: none;
     border: 1px solid rgba(128, 128, 128, 0.256);
