@@ -57,7 +57,7 @@ const Header = () => {
     }
     const userInfo = JSON.parse(localStorage.getItem("user"));
     const loggedin = JSON.parse(localStorage.getItem("loggedin"))
-    console.log(userInfo)
+    // console.log(userInfo)
     return (
         <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
             {loading && <Loader />}

@@ -24,8 +24,7 @@ const SignIn = () => {
   const handelLogin = (e) => {
     e.preventDefault();
     const loggedUser = JSON.parse(localStorage.getItem("user"));
-    console.log(loggedUser.password)
-
+// console.log(loggedUser)
    
      if(!input.email){
       toast.error('please fill the email !', {

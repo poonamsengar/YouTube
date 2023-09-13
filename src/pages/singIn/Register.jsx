@@ -12,6 +12,13 @@ const Register = () => {
   const navigate = useNavigate();
   const [visible, setvisivle] = useState(false)
   const [Confimvisible, setConfimVisivle] = useState(false)
+
+  const loggedUserr = JSON.parse(localStorage.getItem("user"));
+
+  // if(loggedUserr){
+    // console.log(loggedUserr.email)
+ 
+  // }
   
   const [input, setInput] = useState({
     name: "",
@@ -19,11 +26,27 @@ const Register = () => {
     password:"",
     ConfimPassword:"",
   });
+
+
   const FormhandelSubmit = (e) => {
     e.preventDefault()
     const reg = /^[0-9A-Za-z]{6,16}$/
+   
 
-    if (!input.name) {
+    // if(input.email === loggedUserr.email){
+    //   toast.error('email is already exist ', {
+    //     position: "bottom-right",
+    //     autoClose: 3000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "dark",
+    //   });
+    // }
+
+   if (!input.name) {
       toast.error('Fill the name ', {
         position: "bottom-right",
         autoClose: 1000,
@@ -77,6 +100,7 @@ const Register = () => {
         });
       }
     }
+  
     if (!input.password) {
       toast.error('fill the password!', {
         position: "bottom-right",
@@ -280,11 +304,11 @@ const Register = () => {
         theme: "dark",
         });
     }
-    else{
-       swal("Good job!", "Congratulation you registered", "success");
-       navigate('/SignIn')
-       localStorage.setItem("user", JSON.stringify(input));
-     }
+    else {
+        swal("Good job!", "Congratulation you registered", "success");
+        navigate('/SignIn')
+        localStorage.setItem("user", JSON.stringify(input));
+    }
   }
   return (
     <>
