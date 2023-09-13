@@ -24,17 +24,11 @@ const SignIn = () => {
   const handelLogin = (e) => {
     e.preventDefault();
     const loggedUser = JSON.parse(localStorage.getItem("user"));
+    console.log(loggedUser.password)
 
-    if (
-      input.email === loggedUser.email &&
-      input.password === loggedUser.password 
-    ) {
-      localStorage.setItem("loggedin", true);
-      navigate("/");
-      swal("Good job!", "Congratulation you Login", "success");
-    } 
-     else {
-      toast.error('please fill the details!', {
+   
+     if(!input.email){
+      toast.error('please fill the email !', {
         position: "bottom-right",
         autoClose: 1000,
         hideProgressBar: false,
@@ -45,6 +39,51 @@ const SignIn = () => {
         theme: "dark",
         });
     }
+    else if(!input.password){
+      toast.error('please fill the password !', {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+    }
+    if (
+      input.email === loggedUser.email &&
+      input.password === loggedUser.password 
+    ) {
+      localStorage.setItem("loggedin", true);
+      navigate("/");
+      swal("Good job!", "Congratulation you Login", "success");
+    }
+    else if(input.email !== loggedUser.email){
+      toast.error('please fill the correct email !', {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+      }
+    else if(input.password !== loggedUser.password){
+      toast.error('please fill the correct password !', {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+      }
+    
   };
 
   return (

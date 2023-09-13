@@ -282,8 +282,8 @@ const Register = () => {
     }
     else{
        swal("Good job!", "Congratulation you registered", "success");
-       localStorage.setItem("user", JSON.stringify(input));
        navigate('/SignIn')
+       localStorage.setItem("user", JSON.stringify(input));
      }
   }
   return (
